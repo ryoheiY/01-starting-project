@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, input } from '@angular/core';
 
 @Component({
   selector: 'app-user',
@@ -9,15 +9,17 @@ import { Component, Input } from '@angular/core';
 })
 export class UserComponent {
 
-  @Input({required: true}) avatar! : string;
-  @Input({required: true}) name! : string;
-  @Input({required: true}) id! : string;
+  // @Input({required: true}) avatar! : string;
+  // @Input({required: true}) name! : string;
+  // @Input({required: true}) id! : string;
+  avatar = input<string>();
+  name = input<string>();
 
   /**
    * get user image path
    */
   get imagePath (){
-    return "assets/users/" + this.avatar;
+    return "assets/users/" + this.avatar();
   }
 
   /**
