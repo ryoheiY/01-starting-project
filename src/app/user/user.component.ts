@@ -12,8 +12,8 @@ export class UserComponent {
   // @Input({required: true}) avatar! : string;
   // @Input({required: true}) name! : string;
   // @Input({required: true}) id! : string;
-  avatar = input<string>();
-  name = input<string>();
+  avatar = input.required<string>();
+  name = input.required<string>();
 
   /**
    * get user image path
